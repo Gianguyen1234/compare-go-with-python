@@ -19,14 +19,10 @@ python.exe                   13764 Console                    1     25,404 K
 python.exe                   14100 Console                    1     48,024 K
 
 #Go (powershell)
-Get-Item .\inventory-service | Select-Object Name, Length
+"{0:N2} MB" -f ((Get-Item .\inventory-service).Length / 1MB)
+9.94 MB
 
-Name                Length
-----                ------
-inventory-service 10421760
 
 #python (powershell)
-(.venv) PS G:\compare-go-with-python> du -sh .venv
-40M     .venv
-(.venv) PS G:\compare-go-with-python> (Get-ChildItem .venv -Recurse | Measure-Object -Property Length -Sum).Sum / 1MB
-34.5643110275269
+"{0:N2} MB" -f ((Get-ChildItem -Recurse .\.venv | Measure-Object -Property Length -Sum).Sum / 1MB)
+34.56 MB
