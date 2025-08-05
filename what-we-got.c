@@ -18,6 +18,8 @@ tasklist | findstr python
 python.exe                   13764 Console                    1     25,404 K
 python.exe                   14100 Console                    1     48,024 K
 
+
+
 #Go (powershell)
 "{0:N2} MB" -f ((Get-Item .\inventory-service).Length / 1MB)
 9.94 MB
